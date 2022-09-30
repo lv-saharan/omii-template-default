@@ -1,0 +1,14 @@
+{
+    "name": "{{projectName}}",
+    "version": "1.0.0",
+    "description": "{{projectDescription}}",
+    "author": "{{projectAuthor}}",
+    "type": "module",
+    "scripts": {
+        "start": "node esbuild.js dev"
+    },
+    "devDependencies": {
+        "esbuild": "^0.14.49",
+        "esbuild-sass-plugin": "^2.3.0"
+    }
+}
