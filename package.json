@@ -9,6 +9,7 @@
     },
     "devDependencies": {
         "esbuild": "^0.14.49",
-        "esbuild-sass-plugin": "^2.3.0"
+        "esbuild-sass-plugin": "^2.3.0",
+        "live-server": "^1.2.2"
     }
 }
