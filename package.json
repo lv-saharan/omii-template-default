@@ -4,6 +4,7 @@
     "description": "{{projectDescription}}",
     "author": "{{projectAuthor}}",
     "type": "module",
+    "devPort": "8900",
     "scripts": {
         "start": "node esbuild.js dev"
     },

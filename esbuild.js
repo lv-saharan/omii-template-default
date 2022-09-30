@@ -1,11 +1,13 @@
 import esbuild from 'esbuild'
 import fs from 'fs'
 import path from 'path'
+import pkg from './package.json'  assert { type: "json" }
+
 //https://github.com/glromeo/esbuild-sass-plugin/
 import { sassPlugin } from 'esbuild-sass-plugin'
 import liveServer from 'live-server'
 
-const port = 8900
+const port = pkg.devPort ?? 8900
 
 
 const [mode] = process.argv.splice(2);
@@ -27,7 +29,7 @@ let options = {
     jsxFragment: 'h.f',
     format: "esm",
     bundle: true,
-    external: ['/es-lib/*','/common/*'],
+    external: ['/es-lib/*', '/common/*'],
     sourcemap: true,
     minify: true,
     plugins: [sassPlugin({
