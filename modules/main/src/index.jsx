@@ -12,29 +12,22 @@ async function initCSS() {
 initCSS();
 
 import security from "/common/security.js";
+const loginURL = new URL("../login/index.js", import.meta.url).href;
+const homeURL = new URL("../home/index.js", import.meta.url).href;
+
+let mainUrl = loginURL
+if (await security.checkLogin()) {
+  mainUrl = homeURL;
+}
+let rootNode = render(<oi-import src={mainUrl} key="home"></oi-import>, "body");
 
 security
   .onLogin((userInfo) => {
-    rootNode.update();
+    rootNode.load(loginURL);
   })
   .onLogout((_) => {
     const url = new URL("../../", import.meta.url).href;
     location.href = url;
   });
 
-const loginURL = new URL("../login/index.js", import.meta.url).href;
-const loginPage = <oi-import src={loginURL} key="login"></oi-import>;
 
-const homeURL = new URL("../home/index.js", import.meta.url).href;
-const homePage = <oi-import src={homeURL} key="home"></oi-import>;
-
-let page = loginPage;
-if (await security.checkLogin()) {
-  page = homePage;
-}
-let rootNode = render(() => {
-  if (security.logined) {
-    page = homePage;
-  }
-  return <div id="main">{page}</div>;
-}, "body");
