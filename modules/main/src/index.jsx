@@ -23,7 +23,7 @@ let rootNode = render(<oi-import src={mainUrl} key="home"></oi-import>, "body");
 
 security
   .onLogin((userInfo) => {
-    rootNode.load(loginURL);
+    rootNode.load(homeURL);
   })
   .onLogout((_) => {
     const url = new URL("../../", import.meta.url).href;
