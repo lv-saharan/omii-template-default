@@ -1,4 +1,4 @@
-import{h as c,render as h}from"https://www.unpkg.com/@lv-saharan/omii@latest/dist/omii.js";import{css as s}from"https://www.unpkg.com/omii-ui@latest/dist/omii-ui.js";import n from"/common/security.js";var i=`
+import{h as c,render as h}from"http://omii.flatweb.net/es-lib/omii/latest/omii.js";import{css as s}from"http://omii.flatweb.net/es-lib/omii-ui/latest/omii-ui.js";import n from"/common/security.js";var i=`
 html,
 body {
   margin: 0;
