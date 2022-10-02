@@ -2,8 +2,8 @@ import {
   h,
   render,
   define,
-} from "https://www.unpkg.com/@lv-saharan/omii@latest/dist/omii.js";
-import { css } from "https://www.unpkg.com/omii-ui@latest/dist/omii-ui.js";
+} from "http://omii.flatweb.net/es-lib/omii/latest/omii.js";
+import { css } from "http://omii.flatweb.net/es-lib/omii-ui/latest/omii-ui.js";
 import security from "/common/security.js";
 import indexCSS from "./index.scss";
 async function init() {
