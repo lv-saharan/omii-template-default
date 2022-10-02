@@ -4,7 +4,6 @@ import fs from 'fs'
 import path from 'path'
 import { sassPlugin } from 'esbuild-sass-plugin'
 import { dev } from "local-dev-server"
-
 const [mode] = process.argv.splice(2);
 const modulesRoot = './modules'
 const modules = []

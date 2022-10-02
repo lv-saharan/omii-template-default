@@ -26,7 +26,19 @@ export default class extends Component {
       <div className="container">
         <div class="row justify-content-md-center">
           <div class="col-3">
-            <form is="oi-form">
+            <form is="oi-form" onSubmit={evt => {
+              const { userName, password } = this.data;
+              security
+                .login(userName, password)
+                .then(() => {
+                  this.fire("logined");
+                })
+                .catch((exc) => {
+                  alert("登录失败");
+                });
+
+              evt.preventDefault();
+            }}>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">
                   user name
@@ -55,22 +67,7 @@ export default class extends Component {
                 />
               </div>
               <div class="mb-3 d-flex justify-content-between">
-                <button
-                  className="btn btn-primary"
-                  onClick={(evt) => {
-                    const { userName, password } = this.data;
-                    security
-                      .login(userName, password)
-                      .then(() => {
-                        this.fire("logined");
-                      })
-                      .catch((exc) => {
-                        alert("登录失败");
-                      });
-
-                      evt.preventDefault();
-                  }}
-                >
+                <button className="btn btn-primary"                >
                   Login
                 </button>
                 <button className="btn btn-secondary" type="reset">
