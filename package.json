@@ -4,12 +4,20 @@
     "description": "{{projectDescription}}",
     "author": "{{projectAuthor}}",
     "type": "module",
+    "localDev": {
+        "server": {
+            "port": 8901
+        },
+        "api": {
+            "host": "local-api"
+        }
+    },
     "scripts": {
         "start": "node esbuild.js dev"
     },
     "devDependencies": {
         "esbuild": "^0.14.49",
         "esbuild-sass-plugin": "^2.3.0",
-        "live-server": "^1.2.2"
+        "local-dev-server": "^1.0.3"
     }
 }
